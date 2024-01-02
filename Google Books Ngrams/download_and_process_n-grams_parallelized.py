@@ -255,7 +255,12 @@ def main_job(start_files, end_files, progress, thread_task):
 	return local_dict
 
 def update_dicts(d1, d2):
-	return {k: int(d1.get(k, 0)) + int(d2.get(k, 0)) for k in set(d1) | set(d2)}
+    for key in d2.keys():
+        if key not in d1:
+            d1[key] = d2[key]
+        else:
+            d1[key] = d1[key] + d2[key]
+    return d1
 
 def merge_dicts(merged_dict, dicts):
     for d in dicts:
