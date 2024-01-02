@@ -1,0 +1,3 @@
+[submodule "Google Books Ngrams/glove_model/GloVe"]
+	path = Google Books Ngrams/glove_model/GloVe
+	url = https://github.com/stanfordnlp/GloVe
